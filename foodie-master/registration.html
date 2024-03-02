@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./style-login.css">
+    <title>TastefulTouches. | Login & Registration</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    
+</head>
+<body>
+ <div class="wrapper">
+    <nav class="nav">
+        
+        <div class="nav-logo">
+            <hr>
+            <h1>Tasteful <span>Touches.</span></h1>
+        </div>
+        
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                
+                <li><a href="./index.html" class="link">Home</a></li>
+                <li><a href="./shop.html" class="link">Shop</a></li>
+                <li><a href="./contactus.html" class="link">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="nav-button">
+            <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
+            <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+        </div>
+    </nav>
+<!----------------------------- Form box ----------------------------------->    
+    <div class="form-box">
+        
+        <!------------------- login form -------------------------->
+        <div class="login-container" id="login">
+            <div class="top">
+                <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+                <header>Login</header>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="Email">
+                <i class="bx bx-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" placeholder="Password">
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="Sign In" id="login-btn">
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="login-check">
+                    <label for="login-check"> Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Forgot password?</a></label>
+                </div>
+            </div>
+        </div>
+        <!------------------- registration form -------------------------->
+        <div class="register-container" id="register">
+            <div class="top">
+                <span>Have an account? <a href="#" onclick="login()">Login</a></span>
+                <header>Sign Up</header>
+            </div>
+            <!-- <div class="two-forms">
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Firstname" id="Username" required>
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Lastname" >
+                    <i class="bx bx-user"></i>
+                </div>
+            </div> -->
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="Email" id="email" required>
+                <i class="bx bx-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" placeholder="Password" id="password" required>
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="Register" id="submit">
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="register-check">
+                    <label for="register-check"> Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Terms & conditions</a></label>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>   
+  <script>
+   
+   function myMenuFunction() {
+    var i = document.getElementById("navMenu");
+    if(i.className === "nav-menu") {
+        i.className += " responsive";
+    } else {
+        i.className = "nav-menu";
+    }
+   }
+ 
+  </script>
+  <script>
+    var a = document.getElementById("loginBtn");
+    var b = document.getElementById("registerBtn");
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+    function login() {
+        x.style.left = "4px";
+        y.style.right = "-520px";
+        a.className += " white-btn";
+        b.className = "btn";
+        x.style.opacity = 1;
+        y.style.opacity = 0;
+    }
+    function register() {
+        x.style.left = "-510px";
+        y.style.right = "5px";
+        a.className = "btn";
+        b.className += " white-btn";
+        x.style.opacity = 0;
+        y.style.opacity = 1;
+    }
+   </script>
+
+
+ <!-- The core Firebase JS SDK is always required and must be listed first
+   <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+
+  TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries 
+
+ <script>
+     Your web app's Firebase configuration
+    const firebaseConfig = {
+
+ };
+    Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+ </script> 
+         <script type="module">
+     Import the functions you need from the SDKs you need
+             import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+              import { getdatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+  
+   Your web app's Firebase configuration
+              const firebaseConfig = {
+               apiKey: "AIzaSyCwBe68a70KgQGEUavWNJnUiumB2LqcCd4",
+               authDomain: "reswebsite-4d635.firebaseapp.com",
+               projectId: "reswebsite-4d635",
+               storageBucket: "reswebsite-4d635.appspot.com",
+               messagingSenderId: "1065927917986",
+               appId: "1:1065927917986:web:ff63d9fb081779e68df2fb"
+             };
+
+  Initialize Firebase
+               const app = initializeApp(firebaseConfig);
+
+  get ref to database services
+               const db = initializeApp(firebaseConfig);
+
+              document.getElementById(submit).addEventListener('click', function(e){
+                e.preventDefault();
+              set(ref(db, 'user/' + document.getElementById("username").value),
+             {
+              import { getdatabase } from './getdatabase';
+
+              username: document.getElementById("username").value,
+              email: document.getElementById("email").value,     
+              password: document.getElementById("password").value, 
+
+
+              });
+              alert("Registration SucessFull   !")
+             } )
+             import { getdatabase } from './getdatabase';
+             In getdatabase.js
+              export function getdatabase() {
+    Function implementation
+                          }
+                          const obj = { propertyKey: "value" };
+                          let person = {
+                          name Missing colon after property name
+                   age: 30
+                    };
+
+
+
+
+   document.getElementById(loginBtn)
+         </script> --> 
+         <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+            import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+            import { getDatabase ,set,ref ,update } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+              apiKey: "AIzaSyDgaMisESjoLHYoq2XEUkFBUmBWzJblVKA",
+              authDomain: "login-auth-2a113.firebaseapp.com",
+              projectId: "login-auth-2a113",
+              storageBucket: "login-auth-2a113.appspot.com",
+              messagingSenderId: "389976041296",
+              appId: "1:389976041296:web:ebcee20bb7e67d0b62ae55"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth();
+            const database = getDatabase(app);
+            submit.addEventListener('click',(e)=>{
+                
+                var email=document.getElementById('email').value;
+                var password=document.getElementById('password').value;
+                createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    // ...
+    set(ref(database, 'users/' + user.uid), {
+    email: email,
+    password: password,
+    
+  })
+   .then(() => {
+    alert('user create successfull')
+  // Data saved successfully!
+})
+.catch((error) => {
+    alert('errorMessage')
+  // The write failed...
+});
+    alert('user create successfull')
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+    alert(errorMessage);
+  });
+  login_btn.addEventListener('click',(e)=>{
+                
+                var email=document.getElementById('email').value;
+                var password=document.getElementById('password').value;
+  signInWithEmailAndPassword(database, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+    var lgDate =new Date();
+    update(ref(database, 'users/' + user.uid), {
+    last_login:lgDate,
+    
+  })
+   .then(() => {
+    alert('user logged in successfull')
+  // Data saved successfully!
+})
+.catch((error) => {
+    alert('errorMessage')
+  // The write failed...
+});
+    alert('user create successfull')
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+    alert(errorMessage);
+  });
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert('errorMessage')
+  });
+});
+
+
+
+          </script>
+        
+</body>
+</html>
