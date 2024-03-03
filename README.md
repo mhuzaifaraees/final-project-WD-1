@@ -27,7 +27,7 @@ Components:
 Header: Includes the restaurant logo, navigation menu, and possibly a hero image.
 Featured Content: Showcases the restaurant's specialties, promotions, or upcoming events.
 About Section: Brief introduction to the restaurant and its unique selling points.
-Contact Information: Provides basic contact details such as address, phone number, and email.
+Contact Information: Provides basic contact details such as address, , and email.
 2. About Page
 Description: The about page provides more detailed information about the restaurant, its history, mission, and values.
 Components:
@@ -44,14 +44,14 @@ Specials or Recommendations: Highlights special dishes or recommended items.
 Description: The contact page allows visitors to get in touch with the restaurant for inquiries, reservations, or feedback.
 Components:
 Contact Form: Provides a form for users to input their name, email, phone number, message, and possibly reservation details.
-Map and Location: Embeds a map showing the restaurant's location or provides address details.
+Contact form is create bu AI tool which is unique as a funtastic and form data is drop out in to tha AI data store
 Social Media Links: Includes links to the restaurant's social media profiles for further engagement.
 5. Reservation Page
 Description: The reservation page enables users to make reservations online, ensuring a smooth booking process.
 Components:
 Reservation Form: Allows users to select the date, time, party size, and any special requests for their reservation.
 Confirmation Message: Displays a confirmation message after successful submission of the reservation request.
-Reservation Policy: Communicates any reservation policies or terms and conditions.
+Contact form is create bu AI tool which is unique as a funtastic and form data is drop out in to tha AI data store
 6. Responsive Design
 Description: The website is designed to be responsive, providing an optimal viewing experience across various devices and screen sizes.
 Components:
